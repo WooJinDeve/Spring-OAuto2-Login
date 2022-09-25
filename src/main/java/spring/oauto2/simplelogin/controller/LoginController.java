@@ -36,20 +36,4 @@ public class LoginController {
     public String loginForm(){
         return "loginForm";
     }
-
-    @Secured("ROLE_ADMIN")
-    @GetMapping("/info")
-    public String info(Model model){
-        List<UserInfoDto> users = loginRepository.findAll().stream().map(UserInfoDto::new)
-                .collect(Collectors.toList());
-        model.addAttribute("users", users);
-        return "userInfo";
-    }
-
-    @PreAuthorize("hasRole('ROLE_MANAGER') or hasRole('ROLE_ADMIN')")
-    @GetMapping("/data")
-    @ResponseBody
-    public String data(Model model){
-        return "userData";
-    }
 }

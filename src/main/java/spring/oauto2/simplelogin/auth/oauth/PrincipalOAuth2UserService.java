@@ -11,9 +11,12 @@ import org.springframework.stereotype.Service;
 import spring.oauto2.simplelogin.auth.PrincipalDetails;
 import spring.oauto2.simplelogin.auth.oauth.provider.FacebookUserInfo;
 import spring.oauto2.simplelogin.auth.oauth.provider.GoogleUserInfo;
+import spring.oauto2.simplelogin.auth.oauth.provider.NaverUserInfo;
 import spring.oauto2.simplelogin.auth.oauth.provider.OAuth2UserInfo;
 import spring.oauto2.simplelogin.entity.User;
 import spring.oauto2.simplelogin.repository.LoginRepository;
+
+import java.util.Map;
 
 @Slf4j
 @Service
@@ -37,6 +40,8 @@ public class PrincipalOAuth2UserService extends DefaultOAuth2UserService {
             oAuth2UserInfo = new GoogleUserInfo(oAuth2User.getAttributes());
         }else if (userRequest.getClientRegistration().getRegistrationId().equals("facebook")){
             oAuth2UserInfo = new FacebookUserInfo(oAuth2User.getAttributes());
+        }else if(userRequest.getClientRegistration().getRegistrationId().equals("naver")){
+            oAuth2UserInfo = new NaverUserInfo((Map)oAuth2User.getAttributes().get("response"));
         }
 
         String provider = oAuth2UserInfo.getProvider(); // Social Name;
