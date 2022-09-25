@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/security?serverTimezone=Asia/Seoul
+    username: root
+    password: 1234
+
+  jpa:
+    hibernate:
+      ddl-auto: create #create update none
+    properties:
+      hibernate:
+        # show_sql: true
+        format_sql: true
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google: # /oauth2/authorization/google 이 주소를 동작하게 한다.
+            client-id:
+            client-secret:
+            scope:
+              - email
+              - profile
+
+logging.level:
+  org.hibernate.SQL: debug
+  #org.springframework: debug

@@ -1,0 +1,90 @@
+html * {
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #4688F1;
+    padding: 0;
+    margin: 0;
+}
+
+.main-box {
+    background: #fff;
+    padding: 20px;
+    max-width: 480px;
+    margin: 25vh auto;
+    text-align: center;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.main-box:hover {
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.main-box h2 {
+    margin: 20px 0 20px;
+    padding: 0;
+    text-transform: uppercase;
+    color: #4688F1;
+}
+
+.main-button {
+    background: #4688F1;
+    background-position: 25px 0px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    width: 70%;
+    border-radius: 10px;
+    margin: 10px auto;
+    transition: all 0.2s cubic-bezier(0.72, 0.01, 0.56, 1) 0s;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.main-button span{
+  color: white;
+}
+
+.main-button:hover {
+    background: #FFF;
+    background-position: 25px 0px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    width: 70%;
+    border-radius: 10px;
+    margin: 10px auto;
+    transition: all 0.2s cubic-bezier(0.72, 0.01, 0.56, 1) 0s;
+    -webkit-transition: all .8s ease-out;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease-out;
+}
+
+.main-button:hover span {
+    color: #4688F1;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
