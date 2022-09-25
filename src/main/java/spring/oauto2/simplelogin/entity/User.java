@@ -1,9 +1,6 @@
 package spring.oauto2.simplelogin.entity;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,6 +12,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter @Setter
+@ToString
 public class User extends BaseEntity {
 
     @Id @GeneratedValue(strategy = IDENTITY)
@@ -35,6 +33,12 @@ public class User extends BaseEntity {
         this.password = password;
         this.username = username;
         setRole("ROLE_USER");
+    }
+
+    public User(String email, String username, String password, String provider, String providerId) {
+        this(email, password, username);
+        this.provider = provider;
+        this.providerId = providerId;
     }
 
 }
