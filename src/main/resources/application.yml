@@ -24,6 +24,14 @@ spring:
               - email
               - profile
 
+          facebook:
+            client-id:
+            client-secret:
+            scope:
+              - email
+              - public_profile
+
+
 logging.level:
   org.hibernate.SQL: debug
   #org.springframework: debug
